@@ -1,0 +1,14 @@
+name: sdlx
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        os: [macos-latest, ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - run: curl -sSfL sshx.io/get | sh -s run
